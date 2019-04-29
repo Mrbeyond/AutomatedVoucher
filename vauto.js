@@ -9,7 +9,7 @@ for (var i = 0; i <gen.value; i++) {
 		if(hyp<4){take+="-"; hyp++;} } 	}
 		sub=[[take],"Valid",genty.value];
 		fold.push(sub);
-	console.log(fold);}  }
+	console.log(fold); }  aval();  gen.value=""; }
 
 function aval(){
 showval.innerHTML="";	
@@ -25,23 +25,25 @@ for(i=0;i<fold.length;i++){
 	  console.log("wow!" + (i+1)); break;}
 
 	  if (fold[i][0]==lodput.value && fold[i][1]=="Used"){
-	  	loadstat.innerHTML= " Sorry! this voucher has alredy been used by you"; break;}
+	  	loadstat.innerHTML= " Sorry! this voucher has already been used by you"; break;}
 	  
 	 if (fold[i][0] !=lodput.value){
 	  loadstat.innerHTML= "This voucher is invalid, please try a valid one";}   }    }
 
- function balance(){ balval.innerHTML="Your account balance is N"+bal;  }
+ function balance(){ balval.innerHTML="Your account balance is N"+bal;   }
 
  function valsave(){
- 	fold =JSON.stringify(fold);
- 	localStorage.setItem("available", fold);
- 	localStorage.setItem("mybalance", bal); }
+ 	fill = JSON.stringify(fold);
+ 	localStorage.setItem("available", fill);
+ 	console.log(fill);
+ 	
+ 	localStorage.setItem("mybalance", bal);
+ 	 }
 
- function getvauto(){
- 	fold=JSON.parse(localStorage.getItem("available"));
- 	if (fold==null){fold=[]}else{fold=fold};
- 	console.log(fold);
-
- 	bal=localStorage.getItem("mybalance");
- 	if (bal==null){bal=0}else{bal=bal};
- 	console.log(bal); }
+function getvauto(){
+ 	fill=localStorage.getItem("available");
+ 	if (fill==null){fold=[]}else{fold=JSON.parse(fill)};
+ 	console.log(fold);  console.log(typeof(fold));
+ 	bal =localStorage.getItem("mybalance");
+ 	 if(bal==null){bal=0}else{bal=Number(bal);console.log(bal +"   "+typeof(bal)); } };
+ 	
