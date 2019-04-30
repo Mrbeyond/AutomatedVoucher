@@ -11,18 +11,19 @@ for (var i = 0; i <gen.value; i++) {
 		if (j%4===0){ 
 		if(hyp<4){take+="-"; hyp++;} } 	}
 		sub=[[take],"Valid",genty.value]; fold.push(sub);
-	console.log(fold); }	}  }
+	console.log(fold); } alert("Your operation was successful");	}  }
 	else{alert("Please enter 200 or 500");genty.focus();} }
 	else{alert("Please enter a valid Number");gen.focus();} }
 
 function check(){
+		if (fold.length>=1) {
 	for(i=0;i<fold.length;i++){
 	 if(fold[i][1]=="Valid" && fold[i][2]==genty.value){ 
 	 	alert("N"+genty.value+" voucher is still available, Please click the Available button"+
-	 	" to check very well, You can't generate another voucher until they are all USED "
+	 	" to check very well, You can't generate another voucher until they are all USED. "
 	 	+"Thank you!");
 	 	loadstat.innerHTML="Please load the voucher with Valid on it";
-		state=false; break; return false;} else{state=true} } }
+		state=false; break; return false;} else{state=true} } }else{state=true;} }
 
 function aval(){
 showval.innerHTML="";	
